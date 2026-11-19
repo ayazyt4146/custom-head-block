@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "customheadblock",
+  "version": "${version}",
+  "name": "Custom Head Block",
+  "description": "A block for displaying saved player skins.",
+  "authors": ["Ayazyt4146"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.ayazyt4146.customheadblock.CustomHeadBlockMod"],
+    "client": ["dev.ayazyt4146.customheadblock.client.CustomHeadBlockClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
