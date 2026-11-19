@@ -1,5 +1,7 @@
 package dev.ayazyt4146.customheadblock;
 
+import dev.ayazyt4146.customheadblock.block.ModBlocks;
+import dev.ayazyt4146.customheadblock.block.entity.ModBlockEntities;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,8 @@ public final class CustomHeadBlockMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("Custom Head Block is starting.");
+        ModBlocks.initialize();
+        ModBlockEntities.class.getName();
+        LOGGER.info("Custom Head Block initialized.");
     }
 }
