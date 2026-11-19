@@ -1,7 +1,7 @@
 package dev.ayazyt4146.customheadblock.block;
 
 import dev.ayazyt4146.customheadblock.CustomHeadBlockMod;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -30,7 +30,7 @@ public final class ModBlocks {
     }
 
     public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
                 .register(entries -> entries.accept(CUSTOM_HEAD_BLOCK));
     }
 
