@@ -19,5 +19,7 @@ public final class ModBlockEntities {
                     ).build()
             );
 
+    public static void initialize() {}
+
     private ModBlockEntities() {}
 }
