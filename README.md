@@ -1,17 +1,22 @@
 # Custom Head Block
 
-Fabric mod project targeting Minecraft Java 26.2.
+Fabric mod for Minecraft Java 26.2.
 
-## Planned features
-- One placeable custom head block.
-- Right-click configuration screen.
-- Player name or Nova Skin shared URL input.
-- Saved skin data stored with the block and preserved by pick-block / block item copying.
+## Current implementation
+- Registers one placeable **Custom Head Block** and adds it to the Functional Blocks creative tab.
+- Adds a block entity with persistent player-name and skin-URL fields.
+- Adds the block model, item model, blockstate, and English name.
+
+## Planned / not yet complete
+- Right-click configuration screen with player-name and Nova Skin URL tabs.
+- Resolve a Minecraft player profile or Nova Skin shared skin URL into a skin texture.
+- Render the configured head in-world.
+- Preserve the configured profile when using pick-block and placing the copied block item.
 
 ## Build
-The GitHub Actions workflow in `.github/workflows/build.yml` builds the project with Java 25 and Gradle 9.6.1 and uploads the resulting JAR as a workflow artifact.
+The GitHub Actions workflow builds with Java 25 and Gradle 9.6.1 and uploads the JAR as a workflow artifact.
 
-**Status:** project/build scaffold is committed. The gameplay implementation and an in-game verification pass are still in progress; this repository does not yet contain a finished mod JAR.
+**Important:** this is an in-progress implementation, not yet a finished playable mod. A successful Actions build and in-game test are still required before the JAR can be called ready.
 
 ## Target
 - Minecraft Java 26.2
