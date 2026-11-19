@@ -20,7 +20,7 @@ public final class CustomHeadBlockClient implements ClientModInitializer {
             var blockEntity = level.getBlockEntity(hit.getBlockPos());
             String name = blockEntity instanceof CustomHeadBlockEntity head ? head.getPlayerName() : "";
             String url = blockEntity instanceof CustomHeadBlockEntity head ? head.getSkinUrl() : "";
-            Minecraft.getInstance().setScreen(new CustomHeadScreen(hit.getBlockPos(), name, url));
+            Minecraft.getInstance().gui.setScreen(new CustomHeadScreen(hit.getBlockPos(), name, url));
             return InteractionResult.SUCCESS;
         });
     }
