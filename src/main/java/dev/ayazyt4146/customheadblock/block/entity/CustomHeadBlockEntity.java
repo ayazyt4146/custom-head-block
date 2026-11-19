@@ -1,7 +1,10 @@
 package dev.ayazyt4146.customheadblock.block.entity;
 
-import dev.ayazyt4146.customheadblock.block.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -27,6 +30,9 @@ public final class CustomHeadBlockEntity extends BlockEntity {
         this.playerName = playerName == null ? "" : playerName.trim();
         this.skinUrl = skinUrl == null ? "" : skinUrl.trim();
         setChanged();
+        if (level != null) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
     }
 
     @Override
@@ -41,5 +47,15 @@ public final class CustomHeadBlockEntity extends BlockEntity {
         super.loadAdditional(input);
         playerName = input.getStringOr("PlayerName", "");
         skinUrl = input.getStringOr("SkinUrl", "");
+    }
+
+    @Override
+    public Packet<?> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        return saveWithoutMetadata(registries);
     }
 }
