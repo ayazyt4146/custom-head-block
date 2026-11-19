@@ -13,7 +13,7 @@ public final class CustomHeadBlockMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.initialize();
-        ModBlockEntities.class.getName();
+        ModBlockEntities.initialize();
         LOGGER.info("Custom Head Block initialized.");
     }
 }
